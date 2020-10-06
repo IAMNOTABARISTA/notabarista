@@ -1,0 +1,23 @@
+<h1>Sign in</h1>
+
+<input type="text" name="name" [(ngModel)]="name" class="form-control" /> <br />
+<input
+  type="text"
+  name="username"
+  [(ngModel)]="username"
+  class="form-control"
+/><br />
+
+<input
+  type="email"
+  name="email"
+  [(ngModel)]="email"
+  class="form-control"
+/><br />
+<input
+  type="password"
+  name="password"
+  [(ngModel)]="password"
+  class="form-control"
+/><br />
+<button class="btn btn-primary" (click)="handleLogin()">Sign in</button>
