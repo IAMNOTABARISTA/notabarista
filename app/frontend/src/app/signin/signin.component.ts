@@ -17,6 +17,7 @@ export class SigninComponent implements OnInit {
   ngOnInit(): void {
   }
   handleLogin() {
+    // to pass the username with welcome link like welcome/username
     this.router.navigate(["welcome/" + this.username])
   }
 
