@@ -18,13 +18,22 @@
       >
     </div>
     <div class="navbar navbar-collapse justify-content-end">
-      <a class="nav-item nav-link active text-white" routerLink="login"
+      <a
+        class="nav-item nav-link active text-white"
+        routerLink="login"
+        *ngIf="!userAuthenticationService.isUserLoggedIn()"
         >Log in <span class="sr-only">(current)</span></a
       >
-      <a class="nav-item nav-link active text-white" routerLink="signin"
+      <a
+        class="nav-item nav-link active text-white"
+        routerLink="signin"
+        *ngIf="!userAuthenticationService.isUserLoggedIn()"
         >Sign in <span class="sr-only">(current)</span></a
       >
-      <a class="nav-item nav-link active text-white" routerLink="logout"
+      <a
+        class="nav-item nav-link active text-white"
+        routerLink="logout"
+        *ngIf="userAuthenticationService.isUserLoggedIn()"
         >Log out <span class="sr-only">(current)</span></a
       >
     </div>
