@@ -1,3 +1,4 @@
+import { RouteGuardService } from './services/route-guard.service';
 import { LogoutComponent } from './logout/logout.component';
 import { SigninComponent } from './signin/signin.component';
 import { ErrorComponent } from './error/error.component';
@@ -8,9 +9,9 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
-  { path: "welcome/:name", component: WelcomeComponent },
+  { path: "welcome/:name", component: WelcomeComponent, canActivate: [RouteGuardService] },//route guard service
   { path: 'login', component: LoginComponent },
-  { path: 'logout', component: LogoutComponent },
+  { path: 'logout', component: LogoutComponent, canActivate: [RouteGuardService] },
   { path: "signin", component: SigninComponent },
   { path: "**", component: ErrorComponent }
 ];
