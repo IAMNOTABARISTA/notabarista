@@ -1,36 +1,41 @@
+<p class="alert alert-warning" *ngIf="errorMessage">{{ errorMessage }}</p>
 <h1>Sign in</h1>
 
-<input
-  type="text"
-  name="name"
-  [(ngModel)]="name"
-  placeholder="name"
-  class="form-control"
-/>
-<br />
+<form>
+  <input
+    type="text"
+    name="name"
+    [(ngModel)]="name"
+    placeholder="name"
+    class="form-control"
+  />
+  <br />
 
-<input
-  type="email"
-  name="email"
-  [(ngModel)]="email"
-  class="form-control"
-  placeholder="email"
-/>
-<br />
+  <input
+    type="email"
+    name="email"
+    [(ngModel)]="email"
+    class="form-control"
+    placeholder="email"
+  />
+  <br />
 
-<input
-  type="text"
-  name="username"
-  [(ngModel)]="username"
-  class="form-control"
-  placeholder="username"
-/><br />
+  <input
+    type="text"
+    name="username"
+    autocomplete="username"
+    class="form-control"
+    placeholder="username"
+    [(ngModel)]="username"
+  /><br />
+  <input
+    type="password"
+    name="password"
+    class="form-control"
+    autocomplete="new-password"
+    placeholder="password"
+    [(ngModel)]="password"
+  /><br />
+</form>
 
-<input
-  type="password"
-  name="password"
-  [(ngModel)]="password"
-  class="form-control"
-  placeholder="password"
-/><br />
-<button class="btn btn-primary" (click)="handleLogin()">Sign in</button>
+<button class="btn btn-primary" (click)="handleSign()">Sign in</button>

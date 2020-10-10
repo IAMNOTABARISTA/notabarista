@@ -1,20 +1,24 @@
 <h2 class="alert-danger p-2" *ngIf="invalidLogin">{{ errorMessage }}</h2>
 <div>
-  <input
-    type="text"
-    name="username"
-    class="form-control"
-    value="{{ username }}"
-    [(ngModel)]="username"
-  />
-  <br />
-  <input
-    type="password"
-    name="password"
-    class="form-control"
-    value="{{ password }}"
-    [(ngModel)]="password"
-  />
-  <br />
+  <form>
+    <input
+      type="text"
+      name="username"
+      autocomplete="username"
+      class="form-control"
+      value="{{ username }}"
+      [(ngModel)]="username"
+    />
+    <br />
+    <input
+      type="password"
+      name="password"
+      class="form-control"
+      autocomplete="new-password"
+      value="{{ password }}"
+      [(ngModel)]="password"
+    />
+    <br />
+  </form>
   <button class="btn btn-primary" (click)="handleLogin()">Log in</button>
 </div>

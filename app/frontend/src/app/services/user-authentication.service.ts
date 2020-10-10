@@ -17,6 +17,18 @@ export class UserAuthenticationService {
     var user = sessionStorage.getItem("authenticateUser")
     return !(user === null)
   }
+
+  //sign service
+  userSignIn(username, password) {
+    if (password.length >= 6) {
+      sessionStorage.setItem("authenticateUser", username)
+
+      return true
+    }
+    return false
+  }
+
+
   logout() {
     sessionStorage.removeItem("authenticateUser")
   }

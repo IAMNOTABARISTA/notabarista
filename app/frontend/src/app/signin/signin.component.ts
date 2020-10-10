@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { UserAuthenticationService } from '../services/user-authentication.service';
 
 @Component({
   selector: 'app-signin',
@@ -8,17 +9,22 @@ import { Router } from '@angular/router';
 })
 export class SigninComponent implements OnInit {
 
-  name = ""
-  username = ""
-  email = ""
-  password = ""
-  constructor(private router: Router) { }
+  name: String = ""
+  username: String = ""
+  email: String = ""
+  password: String = ""
+
+  errorMessage = "Complete the form properly"
+
+  constructor(private router: Router, private userAuthenticationService: UserAuthenticationService) { }
 
   ngOnInit(): void {
   }
-  handleLogin() {
+  handleSign() {
     // to pass the username with welcome link like welcome/username
-    this.router.navigate(["welcome/" + this.username])
+    if (this.userAuthenticationService.userSignIn(this.username, this.password)) {
+      this.router.navigate(["welcome/" + this.username])
+    }
   }
 
 }
