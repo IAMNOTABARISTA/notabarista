@@ -13,8 +13,17 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
-      <a class="nav-item nav-link active" routerLink=""
+      <a
+        class="nav-item nav-link active"
+        routerLink="welcome/gunjan"
+        *ngIf="userAuthenticationService.isUserLoggedIn()"
         >Home <span class="sr-only">(current)</span></a
+      >
+      <a
+        class="nav-item nav-link active"
+        routerLink="profile/gunjan"
+        *ngIf="userAuthenticationService.isUserLoggedIn()"
+        >Profile <span class="sr-only">(current)</span></a
       >
     </div>
     <div class="navbar navbar-collapse justify-content-end">

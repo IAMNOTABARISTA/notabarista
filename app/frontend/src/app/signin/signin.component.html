@@ -5,6 +5,7 @@
   <input
     type="text"
     name="name"
+    required
     [(ngModel)]="name"
     placeholder="name"
     class="form-control"
@@ -14,6 +15,7 @@
   <input
     type="email"
     name="email"
+    required
     [(ngModel)]="email"
     class="form-control"
     placeholder="email"
@@ -25,6 +27,7 @@
     name="username"
     autocomplete="username"
     class="form-control"
+    required
     placeholder="username"
     [(ngModel)]="username"
   /><br />
@@ -32,8 +35,9 @@
     type="password"
     name="password"
     class="form-control"
+    required
     autocomplete="new-password"
-    placeholder="password"
+    placeholder="password (use more than 6 letter/charecters)"
     [(ngModel)]="password"
   /><br />
 </form>

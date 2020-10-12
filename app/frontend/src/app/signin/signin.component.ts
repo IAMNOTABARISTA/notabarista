@@ -14,7 +14,7 @@ export class SigninComponent implements OnInit {
   email: String = ""
   password: String = ""
 
-  errorMessage = "Complete the form properly"
+  errorMessage = ""
 
   constructor(private router: Router, private userAuthenticationService: UserAuthenticationService) { }
 
@@ -24,6 +24,8 @@ export class SigninComponent implements OnInit {
     // to pass the username with welcome link like welcome/username
     if (this.userAuthenticationService.userSignIn(this.username, this.password)) {
       this.router.navigate(["welcome/" + this.username])
+    } else {
+      this.errorMessage = "try once more!"
     }
   }
 

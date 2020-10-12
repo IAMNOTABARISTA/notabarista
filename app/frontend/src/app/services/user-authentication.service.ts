@@ -20,9 +20,8 @@ export class UserAuthenticationService {
 
   //sign service
   userSignIn(username, password) {
-    if (password.length >= 6) {
+    if (password.length >= 6 && !username.includes("@")) {
       sessionStorage.setItem("authenticateUser", username)
-
       return true
     }
     return false
