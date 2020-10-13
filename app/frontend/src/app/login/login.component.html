@@ -1,4 +1,4 @@
-<h2 class="alert-danger p-2" *ngIf="invalidLogin">{{ errorMessage }}</h2>
+<h2 class="alert alert-danger" *ngIf="errorMessage">{{ errorMessage }}</h2>
 <div>
   <form>
     <input
@@ -6,8 +6,8 @@
       name="username"
       autocomplete="username"
       class="form-control"
-      value="{{ username }}"
-      [(ngModel)]="username"
+      value="gunjan.mtbpaul@gmail.com"
+      [(ngModel)]="user.emailId"
     />
     <br />
     <input
@@ -15,8 +15,8 @@
       name="password"
       class="form-control"
       autocomplete="new-password"
-      value="{{ password }}"
-      [(ngModel)]="password"
+      value="abc"
+      [(ngModel)]="user.password"
     />
     <br />
   </form>

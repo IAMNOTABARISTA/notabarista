@@ -10,7 +10,7 @@ import { ProfileComponent } from './profile/profile.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
-  { path: "welcome/:name", component: WelcomeComponent, canActivate: [RouteGuardService] },//route guard service
+  { path: "welcome/:name", component: WelcomeComponent },//route guard service
   { path: 'login', component: LoginComponent },
   { path: 'logout', component: LogoutComponent, canActivate: [RouteGuardService] },
   { path: "signin", component: SigninComponent },
