@@ -36,4 +36,20 @@ public class Controller {
     }
 
 
+    // for user login
+    @PostMapping("/login")
+    public User userLogin(@RequestBody User user) throws Exception {
+        String tempEmail = user.getEmailId();
+        String tempPassword = user.getPassword();
+        User userObj = null;
+        // to check that user with this email and password combination is exist or not
+        if (tempEmail != null && tempPassword != null) {
+            userObj = service.fetchUserByEmailIDAndPassword(tempEmail, tempPassword);
+            if (userObj == null) {
+                throw new Exception("You are not registered !");
+            }
+        }
+        return userObj;
+    }
+
 }
