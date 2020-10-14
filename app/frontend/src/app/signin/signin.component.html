@@ -6,7 +6,7 @@
     type="text"
     name="name"
     required
-    [(ngModel)]="name"
+    [(ngModel)]="user.name"
     placeholder="name"
     class="form-control"
   />
@@ -16,7 +16,7 @@
     type="email"
     name="email"
     required
-    [(ngModel)]="email"
+    [(ngModel)]="user.emailId"
     class="form-control"
     placeholder="email"
   />
@@ -29,7 +29,7 @@
     class="form-control"
     required
     placeholder="username"
-    [(ngModel)]="username"
+    [(ngModel)]="user.username"
   /><br />
   <input
     type="password"
@@ -38,8 +38,10 @@
     required
     autocomplete="new-password"
     placeholder="password (use more than 6 letter/charecters)"
-    [(ngModel)]="password"
+    [(ngModel)]="user.password"
   /><br />
 </form>
 
 <button class="btn btn-primary" (click)="handleSign()">Sign in</button>
+
+<p>Already have a account? <a routerLink="/login">Log in</a></p>

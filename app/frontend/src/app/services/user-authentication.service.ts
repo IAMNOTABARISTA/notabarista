@@ -31,13 +31,17 @@ export class UserAuthenticationService {
   }
 
   //sign service
-  userSignIn(username, password) {
-    if (password.length >= 6 && !username.includes("@")) {
-      sessionStorage.setItem("authenticateUser", username)
-      return true
-    }
-    return false
+  // userSignIn(username, password) {
+  //   if (password.length >= 6 && !username.includes("@")) {
+  //     sessionStorage.setItem("authenticateUser", username)
+  //     return true
+  //   }
+  //   return false
+  // }
+  userSignIn(user: User): Observable<any> {
+    return this.http.post<any>("http://localhost:8080/register", user)
   }
+
 
 
   //log out service

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { User } from '../classes/user';
 import { UserAuthenticationService } from '../services/user-authentication.service';
 
 @Component({
@@ -13,7 +14,7 @@ export class SigninComponent implements OnInit {
   username: String = ""
   email: String = ""
   password: String = ""
-
+  user = new User()
   errorMessage = ""
 
   constructor(private router: Router, private userAuthenticationService: UserAuthenticationService) { }
@@ -21,12 +22,19 @@ export class SigninComponent implements OnInit {
   ngOnInit(): void {
   }
   handleSign() {
-    // to pass the username with welcome link like welcome/username
-    if (this.userAuthenticationService.userSignIn(this.username, this.password)) {
-      this.router.navigate(["welcome/" + this.username])
-    } else {
-      this.errorMessage = "try once more!"
-    }
+
+
+    this.userAuthenticationService.userSignIn(this.user).subscribe(
+      data => {
+
+        console.log(data)
+        this.router.navigate(["/welcome/gunjan"])
+      },
+      error => {
+        this.errorMessage = "error happend"
+        console.log("error happend")
+      }
+    )
   }
 
 }
