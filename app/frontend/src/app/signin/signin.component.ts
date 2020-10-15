@@ -10,10 +10,6 @@ import { UserAuthenticationService } from '../services/user-authentication.servi
 })
 export class SigninComponent implements OnInit {
 
-  name: String = ""
-  username: String = ""
-  email: String = ""
-  password: String = ""
   user = new User()
   errorMessage = ""
 
@@ -28,7 +24,15 @@ export class SigninComponent implements OnInit {
       data => {
 
         console.log(data)
-        this.router.navigate(["/welcome/gunjan"])
+        if (data != null) {
+          this.userAuthenticationService.userProfile(this.user, data.username).subscribe(
+            data => {
+              console.log(data)
+              this.router.navigate(["/welcome/" + data.username])
+            },
+            error => console.log(error)
+          )
+        }
       },
       error => {
         this.errorMessage = "error happend"

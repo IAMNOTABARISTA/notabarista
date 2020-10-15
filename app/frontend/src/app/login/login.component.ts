@@ -29,7 +29,11 @@ export class LoginComponent implements OnInit {
 
         if (data != null) {
           this.errorMessage = ""
-          this.router.navigate(["/welcome/" + "gunjan"])
+          this.router.navigate(["/welcome/" + data.username])
+          this.userAuthenticationService.userProfile(this.user, data.username).subscribe(
+            data => console.log(data),
+            error => console.log(error)
+          )
         } else {
           this.errorMessage = "fill the required details"
         }
