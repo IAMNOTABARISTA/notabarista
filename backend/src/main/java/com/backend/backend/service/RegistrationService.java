@@ -22,4 +22,12 @@ public class RegistrationService {
     public User fetchUserByUserName(String username) {
         return repo.findByUserName(username);
     }
+
+    public User fetchUserByEmailIDAndPassword(String email, String password) {
+        return repo.findByEmailIdAndPassword(email, password);
+    }
+
+    public User fetchUserByUserNameAndPassword(String userName, String password) {
+        return repo.findByUserNameAndPassword(userName, password);
+    }
 }

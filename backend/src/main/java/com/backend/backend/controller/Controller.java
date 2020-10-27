@@ -15,7 +15,7 @@ public class Controller {
     private RegistrationService service;
 
     // sign in feature
-    @PostMapping("/register")
+    @PostMapping("register")
     public User registration(@RequestBody User user) throws Exception {
 
         // check whether the user email and username is already registered or not
@@ -37,5 +37,31 @@ public class Controller {
     }
 
     // login feature
+    @PostMapping("login")
+    public User loginUser(@RequestBody User user) throws Exception {
+        String tempUserName = user.getUserName();
+        String tempEmailId = user.getEmailId();
+        String tempPassword = user.getPassword();
+        User userObj = null;
+        if (tempPassword != null) {
+            // login using email id
+            if (tempUserName == null) {
+                userObj = service.fetchUserByEmailIDAndPassword(tempEmailId, tempPassword);
+                if (userObj == null) {
+                    throw new Exception("your are not registered !");
+                }
+            }
 
+            // login using username
+            if (tempEmailId == null) {
+                userObj = service.fetchUserByUserNameAndPassword(tempUserName, tempPassword);
+                if (userObj == null) {
+                    throw new Exception("your are not registered !");
+                }
+            }
+
+        }
+        return userObj;
+
+    }
 }
