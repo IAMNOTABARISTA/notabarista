@@ -4,8 +4,8 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 ## files ##
-app/.mvn/wrapper/maven-wrapper.jar
-app/mvnw
+.mvn/wrapper/maven-wrapper.jar
+mvnw
 ### STS ###
 .apt_generated
 .classpath
