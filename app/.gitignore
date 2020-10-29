@@ -3,9 +3,11 @@ target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
+
 ## files ##
 .mvn/wrapper/maven-wrapper.jar
 mvnw
+mvnw.cmd
 ### STS ###
 .apt_generated
 .classpath
@@ -20,6 +22,8 @@ mvnw
 *.iws
 *.iml
 *.ipr
+*.jar
+
 
 ### NetBeans ###
 /nbproject/private/
@@ -35,7 +39,6 @@ build/
 .vscode/
 
 *#
-*.jar
 *.sw?
 *~
 .#*
