@@ -27,13 +27,11 @@ public class AuthenticationService {
     }
 
 
-    public User fetchUserByEmailIDAndPassword(String email, String password) {
-        return repo.findByEmailIdAndPassword(email, password);
-    }
-
-    public User fetchUserByUserNameAndPassword(String username, String password) {
-        return repo.findByUserNameAndPassword(username, password);
-
-    }
+//    public User fetchUserByEmailIDAndPassword(String email, String password) {
+//        return repo.findByEmailIdAndPassword(email, password);
+//    }
+//    public User fetchUserByUserNameAndPassword(String username, String password) {
+//        return repo.findByUserNameAndPassword(username, password);
+//    }
 }
 

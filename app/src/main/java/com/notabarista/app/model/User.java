@@ -1,10 +1,15 @@
 package com.notabarista.app.model;
 
 
+import org.springframework.lang.NonNull;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.Pattern;
 import java.util.UUID;
 
 @Entity
@@ -13,10 +18,38 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
+
+    //email
+    @NonNull
+    @Min(4)
+    @Max(15)
     private String emailId;
+
+
+    //name
+    @NonNull
+    @Pattern(regexp="^[a-zA-Z]")
+    @Min(4)
+    @Max(30)
     private String name;
+
+    //usertype
+    @NonNull
+    @Pattern(regexp="^[a-z]")
+    @Max(4)
     private String userType;
+
+    // username
+    @NonNull
+    @Pattern(regexp="^[a-z]")
+    @Min(4)
+    @Max(10)
     private String userName;
+
+    // password
+    @NonNull
+    @Min(6)
+    @Max(12)
     private String password;
 
     public User() {

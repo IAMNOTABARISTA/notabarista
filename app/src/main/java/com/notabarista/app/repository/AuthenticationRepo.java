@@ -8,7 +8,6 @@ public interface AuthenticationRepo extends JpaRepository<User, Integer> {
 
     User findByEmailId(String email);
 
-    User findByEmailIdAndPassword(String email, String password);
-
-    User findByUserNameAndPassword(String username, String password);
+//    User findByEmailIdAndPassword(String email, String password);
+//    User findByUserNameAndPassword(String username, String password);
 }
